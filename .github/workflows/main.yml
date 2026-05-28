@@ -2,8 +2,8 @@ name: Daily Project Generator (Gemini)
 
 on:
   schedule:
-    - cron: '30 2 * * *'   # 8:00 AM IST / 2:30 AM UTC — adjust as needed
-  workflow_dispatch:        # manual trigger from GitHub Actions UI
+    - cron: '30 2 * * *'
+  workflow_dispatch:
 
 jobs:
   generate:
@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -33,7 +36,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add project_state.json generator.log || true
           git diff --cached --quiet || git commit -m "chore: update state [skip ci]"
-          git push
+          git push origin HEAD:main
