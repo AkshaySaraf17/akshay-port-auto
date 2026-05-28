@@ -18,7 +18,7 @@ from pathlib import Path
 # ── Config ─────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 GITHUB_TOKEN      = os.environ.get("GITHUB_TOKEN", "")
-GITHUB_USERNAME   = os.environ.get("GITHUB_USERNAME", "")
+GITHUB_USERNAME   = os.environ.get("MY_GITHUB_USERNAME", "")
 
 PROJECTS_PER_DAY  = 3
 STATE_FILE        = Path("project_state.json")
