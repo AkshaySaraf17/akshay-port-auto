@@ -27,7 +27,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}          # Personal Access Token (NOT GITHUB_TOKEN)
-          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          GITHUB_USERNAME: ${{ secrets.MY_GITHUB_USERNAME }}
         run: python generate_projects.py
 
       - name: Commit updated state file
