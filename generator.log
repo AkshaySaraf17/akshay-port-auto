@@ -1,0 +1,4 @@
+2026-05-28 17:21:21,204 [ERROR] Set these environment variables:
+  GEMINI_API_KEY  → https://aistudio.google.com/app/apikey (free)
+  GITHUB_TOKEN    → GitHub > Settings > Developer settings > PAT
+  GITHUB_USERNAME → your GitHub username
