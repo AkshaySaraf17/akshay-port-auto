@@ -6,6 +6,7 @@ Generates 3 portfolio projects per day across 7 tech domains.
 """
 
 import os
+import sys
 import json
 import time
 import base64
@@ -190,7 +191,7 @@ def run_daily():
             "  GITHUB_TOKEN    → GitHub > Settings > Developer settings > PAT\n"
             "  GITHUB_USERNAME → your GitHub username"
         )
-        return
+        sys.exit(1)
 
     state = load_state()
     today = datetime.now().strftime("%Y-%m-%d")
