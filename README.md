@@ -1,6 +1,6 @@
 # 🤖 Automated GitHub Project Generator
 
-Automatically generates **3 portfolio projects per day** across 7 tech domains using Claude AI, then pushes them directly to your GitHub — fully hands-free via GitHub Actions.
+Automatically generates **3 portfolio projects per day** across 7 tech domains using Gemini AI, then pushes them directly to your GitHub — fully hands-free via GitHub Actions.
 
 ## 📂 Domains Covered (rotating)
 
@@ -29,17 +29,17 @@ Create a new GitHub repo (e.g. `portfolio-automator`) and push these files into 
 3. Scopes needed: `repo` (full), `workflow`
 4. Copy the token — you'll only see it once
 
-### 3. Get your Anthropic API key
-Sign in at [console.anthropic.com](https://console.anthropic.com) and copy your API key.
+### 3. Get your Gemini API key
+Sign in at [Google AI Studio](https://aistudio.google.com/) and copy your free API key.
 
 ### 4. Add repository secrets
 In **your repo → Settings → Secrets and variables → Actions → New repository secret**, add:
 
 | Secret name | Value |
 |-------------|-------|
-| `ANTHROPIC_API_KEY` | Your Anthropic key (`sk-ant-…`) |
+| `GEMINI_API_KEY` | Your Gemini API key |
 | `GH_PAT` | Your GitHub PAT from step 2 |
-| `GITHUB_USERNAME` | Your GitHub username (e.g. `johndoe`) |
+| `MY_GITHUB_USERNAME` | Your GitHub username (optional; defaults to repository owner) |
 
 ### 5. Enable Actions write permissions
 Go to **repo → Settings → Actions → General → Workflow permissions** and select **"Read and write permissions"**.
@@ -55,7 +55,7 @@ Then go to **Actions → Daily Project Generator → Run workflow** to trigger a
 ---
 
 ## ⏰ Schedule
-The workflow runs every day at **9:00 AM UTC** (edit the cron in `.github/workflows/daily_generator.yml` to change the time).
+The workflow runs every day at **2:30 AM UTC** / **8:00 AM IST** (edit the cron in `.github/workflows/main.yml` to change the time).
 
 ```
 0 9 * * *   →  09:00 UTC daily

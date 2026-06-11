@@ -16,8 +16,8 @@ from pathlib import Path
 
 # ── Config ─────────────────────────────────────────────────────────────────
 GEMINI_API_KEY  = os.environ.get("GEMINI_API_KEY", "")
-GITHUB_TOKEN    = os.environ.get("GH_PAT", "")
-GITHUB_USERNAME = os.environ.get("MY_GITHUB_USERNAME", "")
+GITHUB_TOKEN    = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN") or ""
+GITHUB_USERNAME = os.environ.get("MY_GITHUB_USERNAME") or os.environ.get("GITHUB_USERNAME") or ""
 
 PROJECTS_PER_DAY = 3
 STATE_FILE       = Path("project_state.json")
